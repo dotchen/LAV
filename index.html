@@ -1,0 +1,156 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117258402-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117258402-4');
+</script>
+
+<link rel="StyleSheet" href="assets/style.css" type="text/css" media="all" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>LAV</title>
+<style type="text/css">
+#primarycontent h1 {
+  margin-top: 100px;
+  font-variant: small-caps;
+}
+#primarycontent h3 {
+}
+#primarycontent teasertext {
+  text-align: center;
+}
+#primarycontent p {
+  text-align: center;
+}
+#primarycontent {
+  text-align: justify;
+}
+#primarycontent p {
+  text-align: justify;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#primarycontent p iframe {
+  text-align: center;
+}
+.featart {
+  margin:4px;
+}
+.hoverdiv {
+  background-color:black;
+  margin-top:2px;
+  margin-bottom:10px;
+  width:100%;
+}
+.hoverdiv:hover {
+  background-color:white;
+}
+</style>
+
+
+</head>
+<body>
+<div id="primarycontent">
+<h1 align="center" itemprop="name"><strong>L</strong>earning from <strong>A</strong>ll <strong>V</strong>ehicles</h1>
+<center>
+<h2>CVPR 2022</h2>
+<ul id="people" itemprop="accountablePerson">
+  <li><h4>
+        <a href="https://dotchen.github.io/">Dian Chen</a>,
+        <a href="https://www.philkr.net/">Philipp Kr&auml;henb&uuml;hl</a></h4></li>
+</ul>
+</center>
+
+<center>
+<ul id="menu">
+  <li>
+    <a href="">[Paper]</a>
+    <a href="https://github.com/dotchen/LAV">[Code]</a>
+  </li>
+</ul>
+</center>
+
+<br /><br />
+
+<img src="assets/teaser.svg" itemprop="image" width="1024" alt="teaserImage">
+
+<h3>Abstract</h3>
+<p>In this paper, we present a system to train driving policies from experiences collected not just from the ego-vehicle, but all vehicles that it observes.
+This system uses the behaviors of other agents to create more diverse driving scenarios without collecting additional data.
+The main difficulty in learning from other vehicles is that there is no sensor information.
+We use a set of supervisory tasks to learn an intermediate representation that is invariant to the viewpoint of the controlling vehicle. 
+This not only provides a richer signal at training time but also allows more complex reasoning during inference.
+Learning how all vehicles drive helps predict their behavior at test time and can avoid collisions. 
+We evaluate this system in closed-loop driving simulations. 
+Our system outperforms all prior methods on the <a href="https://leaderboard.carla.org/leaderboard/" >public CARLA Leaderboard</a> by a wide margin, increasing driving score and route completion rate by <strong>68%</strong> and <strong>52%</strong> respectively.
+Our entry won the <a href="https://leaderboard.carla.org/challenge/"> 2021 CARLA Autonomous Driving challenge</a>.
+</p>
+
+<h3>Citation</h3>
+<p>If you find our paper, code or dataset useful, please cite us as: </p>
+<pre><code>
+@inproceedings{chen2022lav,
+  title={Learning from all vehicles},
+  author={Chen, Dian and Kr{\"a}henb{\"u}hl, Philipp},
+  booktitle={CVPR},
+  year={2022}
+}
+</code></pre>
+  
+<!-- <h3 style="clear:both">Leaderboard</h3> -->
+<!-- Our method achieves state-of-the-art on the <a href="https://leaderboard.carla.org/leaderboard/">CARLA leaderboard</a>, as of Apr 2021. -->
+
+<h3 style="clear:both">Demo Video</h3>
+<p>Below shows a sample video of our visuomotor model driving.
+Try 2x speed if you think the video is too slow!
+</p>
+
+<div align="center">
+  <iframe width="1024" height="480" src="https://www.youtube.com/embed/-TlxbmSQ7rQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p>
+  The videos can also be downloaded <a href="https://github.com/dotchen/LAV/tree/website/assets/video" >here</a>.  
+</p>
+  
+<h3 style="clear:both">More Video</h3>
+<p>
+Additional driving videos below. We show our system drive in various weathers under both daylight and night time! The videos might take a few seconds to load.
+</p>
+
+<p>
+Click here if you are unable to access YouTube.
+</p>
+
+<table class="video" align="center">
+<tr>
+  <td><iframe width="512" height="240" src="https://www.youtube.com/embed/TcY8x3sa-Mk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+  <td><iframe width="512" height="240" src="https://www.youtube.com/embed/69GOziMVNaw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+</tr>
+<tr>
+  <td><iframe width="512" height="240" src="https://www.youtube.com/embed/iMBFBdTohG0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+  <td><iframe width="512" height="240" src="https://www.youtube.com/embed/NXkcNshHYSc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+</tr>
+<tr>
+  <td><iframe width="512" height="240" src="https://www.youtube.com/embed/NocM-MKKhw4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+  <td><iframe width="512" height="240" src="https://www.youtube.com/embed/YLt8f7KxKNA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+</tr>
+</table>
+<br />
+<!-- Videos also available on <a href="">bilibili</a>. -->
+
+<h3 style="clear:both">Code and Data</h3>
+<p>Code available on <a href="https://github.com/dotchen/LAV">github.com/dotchen/LAV</a>. </p>
+<!-- We currently  -->
+
+
+<h3 style="clear:both">Website Template</h3>
+<p style="padding-left: 10px; padding-right: 10px;">
+The template for this website has been adopted from Carl Doersch.
+</p>
+
+</body>
+</html>
