@@ -1,0 +1,8 @@
+[submodule "scenario_runner"]
+	path = scenario_runner
+	url = git@github.com:carla-simulator/scenario_runner.git
+	branch = leaderboard
+[submodule "leaderboard"]
+	path = leaderboard
+	url = git@github.com:carla-simulator/leaderboard.git
+	branch = stable

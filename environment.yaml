@@ -1,0 +1,33 @@
+name: LAV-env
+channels:
+  - pytorch
+  - anaconda
+  - defaults
+dependencies:
+  - setuptools
+  - matplotlib
+  - pip>=21.0
+  - python=3.7.10
+  - pip:
+    - dictor
+    - lmdb
+    - tqdm
+    - matplotlib
+    - moviepy
+    - imageio
+    - imageio-ffmpeg
+    - ray==1.1.0
+    - requests
+    - opencv-python
+    - pyyaml
+    - py_trees==0.8.3
+    - shapely
+    - tabulate
+    - six
+    - wandb
+    - xmlschema
+    - einops==0.3.2
+    - Pillow==5.4.1
+    - lmdb==1.1.1
+    - imgaug==0.4.0
+    - ephem
