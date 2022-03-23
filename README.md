@@ -4,7 +4,7 @@
 > Dian Chen, Philipp Kr&auml;henb&uuml;hl         
 > _CVPR 2022_ (also [arXiV 2203.11934](http://arxiv.org/abs/2203.11934))
 
-This repo contains code for paper [Learning from all vehicles](https://arxiv.org/abs/2105.00636).
+This repo contains code for paper [Learning from all vehicles](http://arxiv.org/abs/2203.11934).
 
 It distills a model that performs joint perception, multi-modal prediction and planning, and we hope it to be a great starter kit for end-to-end autonomous driving research.
 
