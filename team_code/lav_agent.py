@@ -129,7 +129,7 @@ class LAVAgent(AutonomousAgent):
         self.speed_controller = PIDController(K_P=self.speed_KP, K_I=self.speed_KI, K_D=self.speed_KD, n=self.speed_n)
         
         self.num_frames = 0
-
+        self.stop_counter = 0
 
     def destroy(self):
 
