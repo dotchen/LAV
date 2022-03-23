@@ -2,7 +2,7 @@
 ![teaser](assets/teaser.svg)
 > [**Learning from All Vehicles**](https://dotchen.github.io/LAV/)    
 > Dian Chen, Philipp Kr&auml;henb&uuml;hl         
-> _CVPR 2022_
+> _CVPR 2022_ (also [arXiV 2203.11934](http://arxiv.org/abs/2203.11934))
 
 This repo contains code for paper [Learning from all vehicles](https://arxiv.org/abs/2105.00636).
 
