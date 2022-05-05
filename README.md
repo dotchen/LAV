@@ -39,6 +39,9 @@ We additionally provide examplery trained weights in the `weights` folder if you
 They are trained on Town01, 03, 04, 06.
 Make sure you are launching CARLA with the `-vulkan` flag.
 
+**Note**: Please note that this is just example weights for quickstart purposes. 
+If you directly submit this to leaderboard you will not get 61 DS.
+Full leaderboard codes will be released later.
 
 Inside the root LAV repo, run
 ```bash
