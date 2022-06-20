@@ -21,6 +21,9 @@ If you find our repo, dataset or paper useful, please cite us as
 }
 ```
 
+## Updates
+* We have slightly updated codes optimized for leaderboard inference speed. Full codes will be released soon.
+
 ## Demo Video
 [![Demo](https://img.youtube.com/vi/-TlxbmSQ7rQ/0.jpg)](https://www.youtube.com/watch?v=-TlxbmSQ7rQ)
 
