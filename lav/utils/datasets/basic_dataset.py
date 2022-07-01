@@ -36,7 +36,14 @@ class BasicDataset(Dataset):
             # Toss a coin
             if np.random.random() > self.percentage_data:
                 continue
-
+            exist_file = False
+            for lmb_file in glob.glob('{}/**'.format(full_path)):
+                # print(lmb_file.split('/')[-1])
+                if lmb_file.split('/')[-1] == 'data.mdb':
+                    exist_file = True
+            if not exist_file:
+                print('data.mdb is not exist in folder', full_path)
+                continue
             txn = lmdb.open(
                 full_path,
                 max_readers=1, readonly=True,
