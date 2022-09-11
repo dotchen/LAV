@@ -4,6 +4,8 @@ from .seg_dataset import SegmentationDataset
 from .bra_dataset import BrakePredictionDataset
 from .lidar_dataset import LiDARDataset
 from .lidar_painted_dataset import LiDARPaintedDataset
+from .temporal_bev_dataset import TemporalBEVDataset
+from .temporal_lidar_painted_dataset import TemporalLiDARPaintedDataset
 from torch.utils.data import DataLoader
 
 

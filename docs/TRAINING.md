@@ -71,3 +71,7 @@ python -m lav.train_full
 Visualize the progress in wandb project page `lav_full`:
 
 ![bev](../assets/train_full.png)
+
+### V2 agent training
+To train the v2 leaderboard agent (used for `team_code_v2`), append `_v2` to each of the training commands except for the seg model.
+Also for the last stage, additionally use a frozen perception pretrain stage (`--motion-only`) before end-to-end fine-tuning.

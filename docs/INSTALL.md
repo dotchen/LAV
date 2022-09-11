@@ -31,8 +31,8 @@ export CARLA_ROOT=[LINK TO YOUR CARLA FOLDER]
 export LEADERBOARD_ROOT=[LINK TO LAV REPO]/leaderboard
 export SCENARIO_RUNNER_ROOT=[LINK TO LAV REPO]/scenario_runner
 export PYTHONPATH="${CARLA_ROOT}/PythonAPI/carla/":"${SCENARIO_RUNNER_ROOT}":"${LEADERBOARD_ROOT}"
-export TEAM_AGENT=[LINK TO LAV REPO]/team_code/lav_agent.py
-export TEAM_CONFIG=[LINK TO LAV REPO]/team_code/config.yaml
+export TEAM_AGENT=[LINK TO LAV REPO]/team_code_v2/lav_agent.py
+export TEAM_CONFIG=[LINK TO LAV REPO]/team_code_v2/config.yaml
 
 export SCENARIOS=${LEADERBOARD_ROOT}/data/all_towns_traffic_scenarios_public.json
 export REPETITIONS=1

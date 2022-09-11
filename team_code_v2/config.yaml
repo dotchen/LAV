@@ -1,0 +1,90 @@
+---
+num_plan: 20
+num_cmds: 6
+camera_x: 1.5
+camera_z: 2.4
+camera_yaws: [-60,0,60]
+seg_channels: [4,6,7,10]
+seg_weight: 0.05
+crop_top: 8
+imagenet_pretrained: True
+distill: True
+fps: 20
+crop_size: 96
+bev_embd_size: 96
+embd_size: 32
+x_jitter: 5
+a_jitter: 30
+nxp_jitter: 10
+num_plan_iter: 5
+cmd_weight: 0.1
+cmd_smooth: 0.2
+cmd_thresh: 0.2
+other_weight: 0.5 # LiDAR only
+log_wandb: True
+#### LiDAR ##########
+backbone: cnn
+min_x: -10
+max_x:  70
+min_y: -40
+max_y:  40
+max_mot_vehicle_radius: 15
+max_vehicle_radius: 25
+max_pedestrian_radius: 10
+max_objs: 20
+pixels_per_meter: 4
+max_lidar_points: 120000
+num_frame_stack: 2
+##### LiDAR augmentation ####
+x_jitter: 10 # In pixels
+angle_jitter: 30 # In degrees
+#### Motion planning ##
+branch_weights: [5,5,5,1,1,1]
+expert_weight: 0.5
+#### Feature augmentation ###
+feature_x_jitter: 1.5      # In meters
+feature_angle_jitter: 20 # In degrees
+##### Use others to train ###
+use_others_to_train: True
+#### Detetion #####
+box_weight: 1.0
+ori_weight: 1.0
+## Segmentations ##
+seg_weight: 2.0
+#### RGB ##########
+crop_tel_bottom: 96
+#### Point Painting ####
+point_painting: True
+num_features: [64,64]
+#### Brake prediction ##
+bra_mask: True
+#### DATA #####
+percentage_data: 1.01
+all_towns: True
+#### CONTROLLER #####
+aim_point: [4,4,4,3,6,6]
+turn_KP: 0.8
+turn_KI: 0.5
+turn_KD: 0.2
+turn_n:  40 # buffer size
+speed_KP: 5.0
+speed_KI: 0.5
+speed_KD: 1.0
+speed_n:  40 # buffer size
+brake_speed: 0.2
+brake_ratio: 1.1
+clip_delta: 0.25
+max_throttle: 0.8
+max_speed: 35 # km/h
+speed_ratio: [0.8,0.8,0.8,0.6,0.8,0.8]
+no_forecast: False
+no_refine: False
+#### MODEL DIR ####
+pixels_per_meter: 4
+lidar_model_dir: weights/lidar_v2_7.th
+uniplanner_dir: weights/uniplanner_v2_7.th
+bra_model_dir: weights/bra_v2_9.th
+seg_model_dir: weights/seg_1.th
+bev_model_dir: weights/bev_v2_64.th
+bra_model_trace_dir: weights/bra_v2_9.pt
+seg_model_trace_dir: weights/seg_1.pt
