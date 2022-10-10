@@ -155,6 +155,14 @@ class LAVAgent(AutonomousAgent):
         self.force_move = 0
         self.lane_changed = None
 
+    def flush_data(self):
+
+        if self.log_wandb:
+            wandb.log({
+                'vid': wandb.Video(np.stack(self.vizs).transpose((0,3,1,2)), fps=20, format='mp4')
+            })
+
+        self.vizs.clear()
 
     def destroy(self):
 
@@ -339,6 +347,12 @@ class LAVAgent(AutonomousAgent):
         if self.force_move > 0:
             throt, brake = max(0.4, throt), 0
             self.force_move -= 1
+
+        viz = self.visualize(rgb, tel_rgb, lidar_points, float(pred_bra), to_numpy(torch.sigmoid(pred_bev[0])), ego_plan_locs, other_cast_locs, other_cast_cmds, det, [-wx, -wy], cmd_value, spd, steer, throt, brake)
+        self.vizs.append(viz)
+
+        if len(self.vizs) >= 12000:
+            self.flush_data()
 
         return carla.VehicleControl(steer=steer, throttle=throt, brake=brake)
 

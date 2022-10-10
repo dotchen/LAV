@@ -23,6 +23,7 @@ If you find our repo, dataset or paper useful, please cite us as
 
 ## Updates
 * We have slightly updated codes optimized for leaderboard inference speed with temporal LiDAR scans (`team_code_v2/lav_agent_fast.py)`.
+* We have released agent and weights for our leaderboard submission.
 
 ## Demo Video
 [![Demo](https://img.youtube.com/vi/-TlxbmSQ7rQ/0.jpg)](https://www.youtube.com/watch?v=-TlxbmSQ7rQ)
@@ -42,10 +43,12 @@ We additionally provide examplery trained weights in the `weights` folder if you
 They are trained on Town01, 03, 04, 06.
 Make sure you are launching CARLA with the `-vulkan` flag.
 
+The agent file for the leaderboard submission is contained in `team_code_v2`.
+
 We additionally provide a faster version of our agent that uses `torch.jit` and moves several CPU-heavy computation (point painting etc.) to GPU.
 This code resides in `team_code_v2/lav_agent_fast.py`. It will also logs visualization to the `wandb` cloud which you can optionally view and debug.
 
-**Known issues**:
+**Known issues for the fast agent**:
 * Since the torchscript trace file is generated using `pytorch==1.7.1`, it might be incompatible with later pytorch versions. Please refer to #23 for more details and how to regenerate the trace files locally. The amount of acceleration is also dependent on hardware platform.
 
 

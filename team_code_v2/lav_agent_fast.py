@@ -76,6 +76,8 @@ class LAVAgent(AutonomousAgent):
         self.waypointer = None
         self.planner    = None
 
+        wandb.init(project='lav_eval')
+
         # Setup models
         self.lidar_model = LiDARModel(
             num_input=len(self.seg_channels)+10+self.num_frame_stack if self.point_painting else 10,
