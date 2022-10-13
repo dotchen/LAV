@@ -69,6 +69,9 @@ class TemporalBEVDataset(BEVDataset):
         # bev_road = np.pad(bev_road, [[0,0],[16,16],[16,16]])
         # bev_road = bev_road[:,self.margin:self.margin+320,self.margin+offset:self.margin+offset+320]
 
+        locs = rotate_points(locs, -angle, ego_locs[0]) + [offset/self.pixels_per_meter, 0]
+        oris[1:] = oris[1:] - np.deg2rad(angle) # Ego vehicle not affected
+
         nxp = self.__class__.access('nxp', lmdb_txn, index, 1).reshape(2)
 
         ego_locs = rotate_points(ego_locs, -angle, ego_locs[0]) + [offset/self.pixels_per_meter, 0]
@@ -76,9 +79,6 @@ class TemporalBEVDataset(BEVDataset):
 
         cmd = int(self.__class__.access('cmd', lmdb_txn, index, 1, dtype=np.uint8))
         bra = int(self.__class__.access('bra', lmdb_txn, index, 1, dtype=np.uint8))
-
-        locs = rotate_points(locs, -angle, ego_locs[0]) + [offset/self.pixels_per_meter, 0]
-        oris[1:] = oris[1:] - np.deg2rad(angle) # Ego vehicle not affected
 
         # Pad tensors
         num_objs    = min(len(locs), self.max_objs)

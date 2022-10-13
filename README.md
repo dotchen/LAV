@@ -34,6 +34,13 @@ Also checkout our [website](https://dotchen.github.io/LAV/)!
 * To run CARLA and train the models, make sure you are using a machine with **at least** a mid-end GPU.
 * Please follow [INSTALL.md](docs/INSTALL.md) to setup the environment.
 
+## Data Collection
+The data collection scripts reside in the `data-collect` branch of the repo.
+
+```bash
+python data_collect.py --num-runners=8
+```
+
 ## Training
 We adopt a LBC-style staged privileged distillation framework.
 Please refer to [TRAINING.md](docs/TRAINING.md) for more details.
