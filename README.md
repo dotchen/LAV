@@ -70,6 +70,7 @@ See [TRAINING.md](docs/TRAINING.md) for more details.
 ## Acknowledgements
 We thank Tianwei Yin for the pillar generation code.
 The ERFNet codes are taken from the official ERFNet repo.
+Leaderboard and scenario runner modified from their original repo.
 
 ## License
 This repo is released under the Apache 2.0 License (please refer to the LICENSE file for details).
