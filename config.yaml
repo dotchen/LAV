@@ -1,8 +1,44 @@
 ---
+turn_tgt_speeds: 6.0
+lane_tgt_speeds: 6.5
+min_speeds: 0.0
+max_speeds: 8.0
+num_speeds: 4
+min_orient: -95
+max_orient: 95
+num_orient: 5
+max_steers: 1.
+max_throts: 1.
+num_steers: 9
+num_throts: 3
+num_repeat: 4
+num_ignore_first: 50
+num_per_flush: 2000
+num_plan: 20
+num_cmds: 6
+thro_rew: 1.0
+brak_rew: 5.0
+stop_rew: 0.1
+temperature: 0.01
+camera_x: 1.5
+camera_z: 2.4
+camera_yaws: [-120,-60,0,60,120]
+seg_channels: [4,6,7,10]
+seg_weight: 0.05
+crop_top: 8
 imagenet_pretrained: True
 log_wandb: True
+noise_collect: False
+use_narr_cam: True
+multi_cam: False
+all_speeds: True
+dense_action_values: True
+ego_model_dir: ego_model.th
+distill: True
+data_dir: [PATH TO DATA]
 fps: 20
 crop_size: 96
+cnn_arch: cnn_sa
 bev_embd_size: 96
 embd_size: 32
 x_jitter: 5
@@ -10,36 +46,32 @@ a_jitter: 30
 nxp_jitter: 10
 num_sample: 50
 num_plan_iter: 5
-num_plan: 10
 cmd_weight: 0.1
 cmd_smooth: 0.2
-cmd_thresh: 0.2
+cmd_thresh: 0.2 # TODO: try 0.2
 kd_weight : 1.0
-other_weight: 0.5 # LiDAR only
+other_weight: 1.0 # LiDAR only
 crop_rgb: 20
-num_cmds: 6
-#### RGB ######
-camera_x: 1.5
-camera_z: 2.4
-camera_yaws: [-120,-60,0,60,120]
 #### LiDAR ##########
 backbone: cnn
 min_x: -10
 max_x:  70
 min_y: -40
 max_y:  40
-max_vehicle_radius: 15
+max_mot_vehicle_radius: 15
+max_vehicle_radius: 25
 max_pedestrian_radius: 10
 max_objs: 20
 pixels_per_meter: 4
-max_points_per_pillar: 100
-max_lidar_points: 40000
-#### Point Painting #####
-seg_channels: [4,6,7,10]
+max_lidar_points: 120000
+num_frame_stack: 2
 ##### LiDAR augmentation ####
 x_jitter: 10 # In pixels
-angle_jitter: 30 # In degrees
+angle_jitter: 20 # In degrees
+stack_loc_jitter: 0.4 # In meters
+stack_ori_jitter: 0.1 # In radians
 #### Motion planning ##
+branch_weights: [5,5,5,1,1,1]
 expert_weight: 0.5
 #### Feature augmentation ###
 feature_x_jitter: 1.5      # In meters
@@ -51,17 +83,21 @@ box_weight: 1.0
 ori_weight: 1.0
 ## Segmentations ##
 seg_weight: 2.0
+### Fine-tuning
+perception_weight: 4.0
 #### RGB ##########
 crop_tel_bottom: 96
 #### Point Painting ####
 point_painting: True
-num_features: [32,32]
+num_features: [64,64]
+#### Brake prediction ##
+bra_mask: True
 #### DATA #####
 percentage_data: 1.01
 all_towns: True
 #### CONTROLLER #####
-aim_point: 4
-turn_KP: 1.0
+aim_point: [4,4,4,3,6,6]
+turn_KP: 0.8
 turn_KI: 0.5
 turn_KD: 0.2
 turn_n:  40 # buffer size
@@ -74,14 +110,7 @@ brake_ratio: 1.1
 clip_delta: 0.25
 max_throttle: 0.8
 max_speed: 35 # km/h
+speed_ratio: [0.8,0.8,0.8,0.6,0.8,0.8]
 no_forecast: False
 no_refine: False
 #### MODEL DIR ####
-pixels_per_meter: 4
-lidar_model_dir: weights/lidar_15.th
-bev_model_dir: weights/bev_160.th
-uniplanner_dir: weights/uniplanner_15.th
-bra_model_dir: weights/bra_10.th
-seg_model_dir: weights/seg_1.th
-### DATASET DIR ###
-data_dir: [PATH TO DATASET]
