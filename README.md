@@ -36,6 +36,10 @@ Also checkout our [website](https://dotchen.github.io/LAV/)!
 
 ## Data Collection
 The data collection scripts reside in the `data-collect` branch of the repo.
+It will log dataset to the path specified in `config.yaml`.
+Specify the number of runners and towns you would like to collect in `data_collect.py`.
+The script supports parallel data collection with `ray`.
+You can view wandb for the routes that are being collected. Example: https://wandb.ai/trilobita/lav_data?workspace=user-trilobita
 
 ```bash
 python data_collect.py --num-runners=8
